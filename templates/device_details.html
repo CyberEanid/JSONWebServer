@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ device.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ device.name }}</h1>
+        <img src="{{ url_for('static', filename=device.image) }}" alt="{{ device.name }}" style="width:200px;height:auto;">
+    </header>
+    <main>
+        <p>Status: {{ device.status }}</p>
+        <p>Type: {{ device.type }}</p>
+        <p>Kamer: {{ room.name }}</p>
+    </main>
+</body>
+</html>
+

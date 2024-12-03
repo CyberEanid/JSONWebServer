@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Kamer Overzicht</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>IoT Kamer Overzicht</h1>
+    </header>
+    <main>
+        <ul class="room-list">
+            {% for room in rooms %}
+                <li>
+                    <a href="{{ url_for('room_details', room_name=room.name) }}">
+                        <img src="{{ url_for('static', filename=room.image) }}" alt="{{ room.name }}" style="width:200px;height:auto;">
+                        <h2>{{ room.name }}</h2>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
+
